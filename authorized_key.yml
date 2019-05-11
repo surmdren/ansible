@@ -1,0 +1,11 @@
+---
+#authorized_key
+- hosts: tmp
+  user: ysurmd
+  tasks:
+    - name: deliver authorized_key
+      authorized_key:
+         user: ysurmd
+         key: "{{ lookup('file', '/home/ysurmd/.ssh/id_rsa.pub') }}"
+      tags:
+       - SSH Key
