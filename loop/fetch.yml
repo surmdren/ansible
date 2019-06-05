@@ -1,0 +1,12 @@
+---
+- name: fetch files
+  hosts: web
+  
+  tasks:
+  - name: fetch files from servers
+    fetch:
+      src: "{{ item }}"
+      dest: /home/ysurmd
+    loop:
+      - /home/ysurmd/test1.txt
+      - /home/ysurmd/test2.txt
