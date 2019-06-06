@@ -1,5 +1,5 @@
 ---
 - name: test ping module
-  hosts: web
+  hosts: all
   tasks:
     - ping:
