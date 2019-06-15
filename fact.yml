@@ -1,0 +1,9 @@
+- name: Test fact.d
+  hosts: web
+  vars:
+    file1: "{{ ansible_local['preferences']['general']['asdf'] }}"
+  tasks:
+  - name: Create file on /tmp
+    file:
+      name: "{{ file1 }}"
+      state: touch
